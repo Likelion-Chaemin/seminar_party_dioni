@@ -1,0 +1,9 @@
+<h3><%= title %></h3>
+<%= form_for @visitor, html: {class: "form-group form-wrapper"} do |f| %>
+  <%= f.text_field :name, class: "form-control form-input", placeholder: "name" %>
+  <%= f.number_field :fun, class: "form-control form-input", placeholder: "fun" %>
+  <div class="text-center">
+    <%= f.submit "CREATE", class: "btn btn-lg btn-primary" %>
+    <%= link_to "CANCEL", root_path, class: "btn btn-lg btn-warning" %>
+  </div>
+<% end %>

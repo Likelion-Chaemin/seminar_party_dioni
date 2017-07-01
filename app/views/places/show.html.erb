@@ -9,11 +9,10 @@
         <h3><%= member.name %></h3>
         <h3><%= member.fun %> </h3>
         <!-- 코드 입력 -->
-
+        <%= link_to '추방', place_member_path(@place.id, member), method: :delete, class: 'btn btn-primary' %>
         <!-- 코드 입력 -->
       </div>
     <% end %>
   </div>
 
 </div>
-

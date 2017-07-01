@@ -15,3 +15,6 @@ for i in 1..100
   Member.create(name: Faker::Name.first_name, fun: rand(0..10)-5, place_id: rand(1..3))
 end
 
+for i in 1..100
+  Visitor.create(name: Faker::Name.first_name, fun: rand(0..10)-5)
+end
