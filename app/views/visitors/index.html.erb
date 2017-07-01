@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <%= image_tag "https://pbs.twimg.com/media/Con7IcNVIAAx6Nk.jpg", style: "width:600px; height:auto;" %>
+  </div>
+  <h2> 전체 흥 <%= @sum %>/200 <h2>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @percent %>" aria-valuemin="0" aria-valuemzx="100" style="width:<%= @percent %>%"></div>
+  </div>
+  <div class="row">
+    <h4>파티참여자 </h4>
+  </div>
+  <div class="row">
+    <% @visitors.each do |v| %>
+      <div class="col-md-2 panel panel-default">
+        <h3><%= v.name %></h3>
+        <h3>흥 : <%= v.fun %></h3>
+        <%= link_to "추방", visitor_path(v), method: 'DELETE', class: 'btn btn-primary', style: 'margin-bottom: 10px;' %>
+        <%= link_to "수정", edit_visitor_path(v), class: 'btn btn-primary', style: 'margin-bottom: 10px' %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "초대&창조", new_visitor_path, class: "btn btn-primary", style: "margin-bottom:10px" %>
+  </div>

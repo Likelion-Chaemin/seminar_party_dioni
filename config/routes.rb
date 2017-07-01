@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  root 'visitors#index'
+  resources :visitors
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   concern :memberable do
     resources :members
   end
 
-  resources :places, concerns: :memberable, shallow: true
+  resources :places, concerns: :memberable
+
 end
